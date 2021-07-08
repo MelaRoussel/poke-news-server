@@ -1,4 +1,5 @@
 const express = require('express')
+
 const app = express()
 const port = process.env.PORT || 5000
 const users = [{name: "Mela", password: "PokeNews"}, {name:"Dernier Cri", password:"SpecialUser"}];
@@ -11,7 +12,7 @@ app.post('/login', (req, res) => {
     if (!user) {
         res.status(401).send('Wrong name or password')
     }
-    else if (user.name) {
+    else if (user) {
         res.status(200).send('Logged in')
     }
 })
