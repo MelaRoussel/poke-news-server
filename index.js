@@ -13,7 +13,7 @@ app.post('/login', (req, res) => {
         res.status(401).send('Wrong name or password')
     }
     else if (user) {
-        res.status(200).send('Logged in')
+        res.status(200).send({message: 'Logged in', username: user.name})
     }
 })
 
